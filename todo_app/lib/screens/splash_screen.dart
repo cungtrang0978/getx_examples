@@ -6,7 +6,7 @@ import 'package:todo_app/controllers/authController.dart';
 import 'package:todo_app/controllers/bindings/authBinding.dart';
 import 'package:todo_app/utils/root.dart';
 
-class Splash extends GetView<AuthController> {
+class SplashScreen extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
     Timer(Duration(seconds: 1), () {

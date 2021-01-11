@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_app/controllers/authController.dart';
 import 'package:todo_app/controllers/userController.dart';
-import 'package:todo_app/screens/home.dart';
-import 'package:todo_app/screens/login.dart';
+import 'package:todo_app/screens/home_screen.dart';
+import 'package:todo_app/screens/login_screen.dart';
 
 class Root extends GetWidget<AuthController> {
   @override
@@ -16,9 +16,9 @@ class Root extends GetWidget<AuthController> {
       },
       builder: (_) {
         if (controller.user?.uid != null) {
-          return Home();
+          return HomeScreen();
         } else {
-          return Login();
+          return LoginScreen();
         }
       },
     );

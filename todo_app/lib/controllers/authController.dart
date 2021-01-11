@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_app/controllers/userController.dart';
 import 'package:todo_app/models/user.dart';
@@ -30,9 +31,18 @@ class AuthController extends GetxController {
         Get.back();
       }
     } catch (e) {
+      String message = e.message;
+      // switch (e.code) {
+      //   case 'weak-password':
+      //     message = 'The password provided is too weak.';
+      //     break;
+      //   case 'email-already-in-use':
+      //     message = 'The account already exists for that email.';
+      //     break;
+      // }
       Get.snackbar(
         "Error creating Account",
-        e.message,
+        message,
         snackPosition: SnackPosition.BOTTOM,
       );
     }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 import 'package:todo_app/controllers/authController.dart';
-import 'package:todo_app/screens/signup.dart';
 
-class Login extends GetWidget<AuthController> {
+class SignUpScreen extends GetView<AuthController> {
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -11,7 +11,7 @@ class Login extends GetWidget<AuthController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login"),
+        title: Text("Sign Up"),
       ),
       body: Center(
         child: Padding(
@@ -19,6 +19,13 @@ class Login extends GetWidget<AuthController> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              TextFormField(
+                decoration: InputDecoration(hintText: "Full Name"),
+                controller: nameController,
+              ),
+              SizedBox(
+                height: 40,
+              ),
               TextFormField(
                 decoration: InputDecoration(hintText: "Email"),
                 controller: emailController,
@@ -28,20 +35,14 @@ class Login extends GetWidget<AuthController> {
               ),
               TextFormField(
                 decoration: InputDecoration(hintText: "Password"),
-                controller: passwordController,
                 obscureText: true,
-              ),
-              RaisedButton(
-                child: Text("Log In"),
-                onPressed: () {
-                  controller.login(
-                      emailController.text, passwordController.text);
-                },
+                controller: passwordController,
               ),
               FlatButton(
                 child: Text("Sign Up"),
                 onPressed: () {
-                  Get.to(SignUp());
+                  controller.createUser(nameController.text,
+                      emailController.text, passwordController.text);
                 },
               )
             ],

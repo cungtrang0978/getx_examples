@@ -7,7 +7,7 @@ import 'package:todo_app/controllers/userController.dart';
 import 'package:todo_app/services/database.dart';
 import 'package:todo_app/widgets/todo_card.dart';
 
-class Home extends GetWidget<AuthController> {
+class HomeScreen extends GetWidget<AuthController> {
   final TextEditingController _todoController = TextEditingController();
   @override
   Widget build(BuildContext context) {
