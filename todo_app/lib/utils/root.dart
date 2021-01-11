@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_app/controllers/authController.dart';
@@ -13,7 +15,7 @@ class Root extends GetWidget<AuthController> {
         Get.put<UserController>(UserController());
       },
       builder: (_) {
-        if (Get.find<AuthController>().user?.uid != null) {
+        if (controller.user?.uid != null) {
           return Home();
         } else {
           return Login();

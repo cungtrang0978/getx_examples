@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_app/controllers/bindings/authBinding.dart';
+import 'package:todo_app/screens/splash.dart';
 import 'package:todo_app/utils/root.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       initialBinding: AuthBinding(),
-      home: Root(),
+      home: Splash(),
       theme: ThemeData.dark(),
     );
   }
