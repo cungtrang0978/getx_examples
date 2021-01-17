@@ -22,7 +22,7 @@ class HomeScreen extends GetWidget<AuthController> {
             if (_.user.name != null) {
               return Text("Welcome " + _.user.name);
             } else {
-              return Text("loading...");
+              return Center(child: CircularProgressIndicator(),);
             }
           },
         ),
